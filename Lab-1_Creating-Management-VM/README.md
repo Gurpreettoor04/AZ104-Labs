@@ -17,12 +17,12 @@ Create a Windows 11 Virtual Machine (VM) in VMware Workstation to serve as a man
 2. Open VMware Workstation → File → New Virtual Machine → Typical → Next.  
 3. Select “I will install the OS later” → Next.  
 4. Guest OS: Microsoft Windows → Version: Windows 11 x64 → Next.  
-5. Name VM `NCOTMGMTVM` → Store in `C:\AZ104Labs\GurMGMTVM` → Next.  
+5. Name VM `TestMGMTVM` → Store in `C:\AZ104Labs\TestMGMTVM` → Next.  
 6. Encryption: “Only files needed for TPM” → Password: `Github@25` → Next.  
 7. Disk: 320 GB, single file → Next → Finish.  
 8. Configure CD/DVD to use Windows 11 ISO → Connect at power on.  
 9. Power on VM → Install Windows 11 Education → Custom installation.  
-10. Configure account: `GurAdmin` / `Github@25`.  
+10. Configure account: `TestAdmin` / `Github@25`.  
 11. Complete setup with region Canada, keyboard US.  
 
 ### Task 2: Installing VMware Tools

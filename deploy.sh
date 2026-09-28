@@ -49,3 +49,4 @@ az network vnet subnet create \
   -o none
 
 echo "Deployment complete. Run ./validate.sh $subscription_id $resource_group"
+

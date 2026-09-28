@@ -24,3 +24,4 @@ for entry in "snet-app:10.42.1.0/24" "snet-data:10.42.2.0/24"; do
   echo "Verified $name: $actual"
 done
 echo "Verified VNet: $actual_vnet in subscription $subscription_id"
+

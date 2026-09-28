@@ -1,35 +1,34 @@
-# Azure Administrator Projects (AZ-104)
+# Azure network deployment
 
-Hands-on Azure administration exercises covering virtual machines, networking, resource organization, command-line tools, storage access, snapshots, and availability. These are practice environments documented to show the configuration process and what was validated.
+Runnable Azure CLI project for a small practice network. The script creates a new resource group, a VNet, and two subnets; a separate script checks the deployed address ranges. It prompts before creation and stops if the resource group name already exists.
 
-## Project index
+## Requirements
 
-| Area | Exercise | What it demonstrates |
-| --- | --- | --- |
-| Foundation | [Management VM](Lab-1_Creating-Management-VM/README.md) | Prepare a Windows management workstation in VMware |
-| Azure access | [Azure subscription setup](Lab-2_Creating-Azure-Free-Trial-Account/README.md) | Navigate subscription setup and account verification |
-| Networking | [Resource groups and virtual networks](Lab3_CreatingResources/README.md) | Create resource groups, address spaces, and subnets |
-| Portal | [Dashboard and templates](Lab4_AzureDashboard/README.md) | Organize a dashboard and inspect templates |
-| Automation | [Azure PowerShell and CLI](Lab5_AzurePowerShell_CLI/README.md) | Connect and verify subscriptions from command-line tools |
-| Automation | [Cloud Shell](Lab6_CloudShell/README.md) | Use PowerShell and Bash in Azure Cloud Shell |
-| Storage | [Storage Explorer](Lab7_StorageExplorer/README.md) | Install and connect a storage administration client |
-| Recovery | [VMware snapshots](Lab8_TakeSnapshots/README.md) | Capture a virtual machine state for testing |
-| Availability | [Azure availability sets](Lab9_AvailabilitySets/README.md) | Configure fault and update domain distribution |
+- Azure CLI in Bash or Azure Cloud Shell
+- An Azure subscription where you may create resource groups and virtual networks
 
-## Additional cloud project
+## Run
 
-- [Azure SQL and database administration](projects/azure-sql-database/README.md): database provisioning, access controls, monitoring, backup, and recovery exercises from my training notes.
+```bash
+az login
+az account list -o table
+bash deploy.sh "<subscription-id>" "rg-portfolio-network" "canadacentral"
+bash validate.sh "<subscription-id>" "rg-portfolio-network"
+```
 
-## Automation project
+The deployment asks you to type `CREATE`. Use a new resource group name. The network uses `10.42.0.0/16`, with `10.42.1.0/24` and `10.42.2.0/24` subnets. Check for address overlap before connecting it to another network. Azure permissions or region policy can prevent deployment.
 
-- [Azure network deployment and validation](automation/azure-network/README.md): parameterized Azure CLI scripts for a resource group, VNet, and two subnets. Prepared for a personal Azure account; live deployment has not been claimed.
+## Local test
 
-## Tools
+```bash
+bash -n deploy.sh validate.sh
+bash tests/test-scripts.sh
+```
 
-Microsoft Azure, Azure PowerShell, Azure CLI, Azure Cloud Shell, VMware Workstation, and Azure Storage Explorer.
+The local test uses a fake Azure CLI and makes no Azure resources. The live deployment is separate and must be performed in your account.
 
-## About this portfolio
+## Cleanup
 
-I'm Gurpreet Kaur Toor, an IT Administrator with hands-on experience in Microsoft 365, Active Directory, Entra ID, endpoint support, and infrastructure projects. See my [LinkedIn profile](https://www.linkedin.com/in/gurpreet-kaur-toor-1b5516144/).
+After checking the resource group contents in the Azure portal, delete the practice resource group there if you no longer need it. Deleting the group removes everything in it.
 
-These notes describe training exercises. Names and addresses are examples; never publish account passwords, tokens, or production environment details.
+No credentials, tenant IDs, or subscription IDs belong in this repository.

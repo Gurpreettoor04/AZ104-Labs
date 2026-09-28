@@ -18,11 +18,11 @@ Create a Windows 11 Virtual Machine (VM) in VMware Workstation to serve as a man
 3. Select “I will install the OS later” → Next.  
 4. Guest OS: Microsoft Windows → Version: Windows 11 x64 → Next.  
 5. Name VM `TestMGMTVM` → Store in `C:\AZ104Labs\TestMGMTVM` → Next.  
-6. Encryption: “Only files needed for TPM” → Password: `Github@25` → Next.  
+6. Encryption: “Only files needed for TPM” → Password: `<your-private-lab-password>` → Next.  
 7. Disk: 320 GB, single file → Next → Finish.  
 8. Configure CD/DVD to use Windows 11 ISO → Connect at power on.  
 9. Power on VM → Install Windows 11 Education → Custom installation.  
-10. Configure account: `TestAdmin` / `Github@25`.  
+10. Configure account: `TestAdmin` / `<your-private-lab-password>`.  
 11. Complete setup with region Canada, keyboard US.  
 
 ### Task 2: Installing VMware Tools
@@ -40,7 +40,7 @@ Create a Windows 11 Virtual Machine (VM) in VMware Workstation to serve as a man
 
 ### Task 4: Configuring Firewall
 1. Control Panel → Windows Defender Firewall → Advanced Settings.  
-2. Turn **Off** firewall for Domain, Private, and Public profiles.  
+2. Keep the firewall enabled. Add only the inbound or outbound rules required for this lab, and remove temporary rules after testing.  
 
 ### Task 5: Adding a Network Adapter
 1. VM Settings → Add → Network Adapter → Bridged → Replicate physical connection.  
@@ -55,7 +55,7 @@ Create a Windows 11 Virtual Machine (VM) in VMware Workstation to serve as a man
 - Network configured correctly → Internet accessible.  
 - VMware Tools installed.  
 - Google Chrome installed.  
-- Firewall turned off.  
+- Firewall remains enabled, with only required rules configured.  
 
 ## Learning Points
 - Creating and configuring VMs in VMware.  

@@ -2,9 +2,9 @@
 
 ## Task 1: Configuring Azure Dashboard
 
-1. Sign in to **TestMGMTVM** as **TestAdmin** with password `Github@25`.
+1. Sign in to **TestMGMTVM** as **TestAdmin** with password `<your-private-lab-password>`.
 2. Open **Google Chrome** (Incognito: Ctrl+Shift+N) and go to [https://portal.azure.com](https://portal.azure.com).
-3. Sign in with `<az104username>@Gurpreet708.com` and password `Github@25`.
+3. Sign in with `<az104username>@example.com` and password `<your-private-lab-password>`.
 4. Click the **Show portal menu** (three lines) → Dashboard → **+ Create**.
 5. Choose **Custom** dashboard.
 6. Name the dashboard: `DemoDB`.

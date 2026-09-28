@@ -6,7 +6,7 @@
 
 ## Steps
 
-1. Sign in to **TestMGMTVM** as **TestAdmin** with password `Github@25`.  
+1. Sign in to **TestMGMTVM** as **TestAdmin** with password `<your-private-lab-password>`.  
 
 2. Open **File Explorer** → double-click `DVD Drive (D:) NCOTMS01` → open `Tools`.  
 
@@ -28,7 +28,7 @@
 
 11. In the **Connect to Azure Storage** window, click **Next**.  
 
-12. In the **Sign in to your account** window, sign in to Microsoft Azure as `az104username@Gurpreet708.com` with password `Github@25`.  
+12. In the **Sign in to your account** window, sign in to Microsoft Azure as `az104username@example.com` with password `<your-private-lab-password>`.  
 
 13. On the **Account Management** page, click **Apply** and review settings.  
 

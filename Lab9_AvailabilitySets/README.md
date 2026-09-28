@@ -1,4 +1,4 @@
-# Lab 9: Creating Availability Sets for Load Balancing
+# Lab 9: Creating Availability Sets for High Availability
 
 **Objective:** Learn how to create availability sets in Azure to improve VM resiliency and load balancing.
 
@@ -6,11 +6,11 @@
 
 ## Steps
 
-1. Sign in to **TestMGMTVM** as **TestAdmin** with password `Github@25`.  
+1. Sign in to **TestMGMTVM** as **TestAdmin** with password `<your-private-lab-password>`.  
 
 2. Open **Google Chrome**, press `Ctrl+Shift+N` (Incognito), and browse to [https://portal.azure.com](https://portal.azure.com).  
 
-3. Sign in to Microsoft Azure as `<az104username>@Gurpreet708.com` with password `Github@25`. On the "Stay signed in?" page, click **Yes**.  
+3. Sign in to Microsoft Azure as `<az104username>@example.com` with password `<your-private-lab-password>`. On the "Stay signed in?" page, click **Yes**.  
 
 4. On the Azure services page, click **Show portal menu** (three lines icon) → **All services**.  
 

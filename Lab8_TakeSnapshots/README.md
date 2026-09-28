@@ -6,7 +6,7 @@
 
 ## Steps
 
-1. Sign in to **TestMGMTVM** as **TestAdmin** with password `Github@25`.  
+1. Sign in to **TestMGMTVM** as **TestAdmin** with password `<your-private-lab-password>`.  
 
 2. Shut down the virtual machines carefully before taking a snapshot.  
 

@@ -16,6 +16,10 @@ Hands-on Azure administration exercises covering virtual machines, networking, r
 | Recovery | [VMware snapshots](Lab8_TakeSnapshots/README.md) | Capture a virtual machine state for testing |
 | Availability | [Azure availability sets](Lab9_AvailabilitySets/README.md) | Configure fault and update domain distribution |
 
+## Automation project
+
+- [Azure network deployment and validation](automation/azure-network/README.md): parameterized Azure CLI scripts for a resource group, VNet, and two subnets. Prepared for a personal Azure account; live deployment has not been claimed.
+
 ## Tools
 
 Microsoft Azure, Azure PowerShell, Azure CLI, Azure Cloud Shell, VMware Workstation, and Azure Storage Explorer.

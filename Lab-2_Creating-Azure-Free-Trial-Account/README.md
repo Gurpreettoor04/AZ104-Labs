@@ -12,7 +12,7 @@ Set up a Microsoft Azure free trial account for lab exercises and learning Azure
 ### Task 1: Creating an Azure Free Trial Account
 1. Sign in to TESTMGMTVM as Administrator.  
 2. Open Chrome (Incognito: Ctrl+Shift+N) → browse to [https://portal.azure.com](https://portal.azure.com).  
-3. Sign in with `<az104username>@Gurpreet708.com` and password `Github@25`.  
+3. Sign in with `<az104username>@example.com` and password `<your-private-lab-password>`.  
 4. On the security pages, provide phone and email verification as required.  
 5. On “Azure for Students” → select your subscription offer.  
 6. Fill academic verification info: First name, Last name, School, DOB, Country.  

@@ -2,7 +2,7 @@
 
 ## Task 1: Installing Azure PowerShell Module
 
-1. Sign in to TestMGMTVM as TestAdmin with password Github@25.
+1. Sign in to TestMGMTVM as TestAdmin with password <your-private-lab-password>.
 2. Click Start → type Windows PowerShell → Run as Administrator → click Yes for UAC.
 3. In PowerShell, type:
    Set-ExecutionPolicy RemoteSigned
@@ -18,7 +18,7 @@
 3. Install Azure CLI 2.5.1 from the ISO if not installed.
 4. Open PowerShell (Admin) and run:
    Connect-AzAccount
-5. Sign in with <az104username>@Gurpreet708.com and password Github@25.
+5. Sign in with <az104username>@example.com and password <your-private-lab-password>.
 6. Verify subscription:
    Get-AzSubscription
 
@@ -27,5 +27,5 @@
 1. Open Command Prompt → Run as Administrator → Yes for UAC.
 2. Type:
    az login
-3. Select Google Chrome and sign in with <az104username>@Gurpreet708.com.
+3. Select Google Chrome and sign in with <az104username>@example.com.
 4. Observe output → close windows when done.

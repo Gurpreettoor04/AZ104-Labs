@@ -1,0 +1,64 @@
+---
+- name: Install Apache and firewalld dependencies
+  ansible.builtin.dnf:
+    name:
+      - httpd
+      - firewalld
+      - python3-firewall
+    state: present
+
+- name: Ensure firewalld is running
+  ansible.builtin.systemd_service:
+    name: firewalld
+    state: started
+    enabled: true
+
+- name: Deploy minimal Apache configuration
+  ansible.builtin.template:
+    src: portfolio.conf.j2
+    dest: /etc/httpd/conf.d/portfolio.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Reload Apache
+
+- name: Publish status page
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Ensure Apache is running
+  ansible.builtin.systemd_service:
+    name: httpd
+    state: started
+    enabled: true
+
+- name: Open HTTP service in firewalld
+  ansible.posix.firewalld:
+    service: http
+    state: enabled
+    permanent: true
+    immediate: true
+
+- name: Apply configuration before the health check
+  ansible.builtin.meta: flush_handlers
+
+- name: Check local HTTP response
+  ansible.builtin.uri:
+    url: http://127.0.0.1/
+    return_content: true
+    status_code: 200
+  register: portfolio_response
+  retries: 3
+  delay: 2
+  until: portfolio_response.status == 200
+  changed_when: false
+
+- name: Verify the expected deployment marker
+  ansible.builtin.assert:
+    that:
+      - "('portfolio-release=' ~ portfolio_release) in portfolio_response.content"
+    fail_msg: "HTTP responded, but the expected release marker was missing."

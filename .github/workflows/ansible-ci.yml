@@ -1,0 +1,27 @@
+name: Ansible syntax
+
+on:
+  push:
+    paths:
+      - "projects/rhel-ansible/**"
+      - ".github/workflows/ansible-ci.yml"
+  pull_request:
+    paths:
+      - "projects/rhel-ansible/**"
+      - ".github/workflows/ansible-ci.yml"
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Ansible
+        run: python -m pip install "ansible-core>=2.19,<2.22"
+      - name: Check playbook syntax
+        working-directory: projects/rhel-ansible
+        run: |
+          ansible-galaxy collection install -r requirements.yml
+          ansible-playbook -i inventory.example.ini site.yml --syntax-check

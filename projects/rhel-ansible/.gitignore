@@ -1,0 +1,4 @@
+inventory.ini
+*.retry
+.ansible/
+__pycache__/

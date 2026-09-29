@@ -32,3 +32,7 @@ The local test uses a fake Azure CLI and makes no Azure resources. The live depl
 After checking the resource group contents in the Azure portal, delete the practice resource group there if you no longer need it. Deleting the group removes everything in it.
 
 No credentials, tenant IDs, or subscription IDs belong in this repository.
+
+## RHEL and Ansible automation
+
+- [Rolling web deployment](projects/rhel-ansible/README.md): a complete Ansible role that installs and checks a web service across RHEL hosts one at a time. It includes a syntax-check workflow; live execution requires your own test VMs.

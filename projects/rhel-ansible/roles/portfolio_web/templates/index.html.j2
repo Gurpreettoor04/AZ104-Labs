@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ portfolio_page_title | e }}</title>
+</head>
+<body>
+  <h1>{{ portfolio_page_title | e }}</h1>
+  <p>Host: {{ inventory_hostname | e }}</p>
+  <p>portfolio-release={{ portfolio_release | e }}</p>
+</body>
+</html>

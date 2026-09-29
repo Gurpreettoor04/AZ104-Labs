@@ -1,0 +1,16 @@
+---
+- name: Roll out and verify portfolio web service
+  hosts: rhel_web
+  become: true
+  gather_facts: true
+  serial: 1
+  any_errors_fatal: true
+  pre_tasks:
+    - name: Require supported RHEL test hosts
+      ansible.builtin.assert:
+        that:
+          - ansible_distribution == 'RedHat'
+          - ansible_distribution_major_version in ['8', '9']
+        fail_msg: "Use an RHEL 8 or 9 test VM for this project."
+  roles:
+    - portfolio_web
